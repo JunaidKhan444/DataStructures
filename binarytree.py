@@ -1,6 +1,3 @@
-from turtle import left
-
-from itsdangerous import NoneAlgorithm
 
 
 class Node():
@@ -24,3 +21,17 @@ class Node():
                     self.right.insert(data)
         else:
             self.data = data
+    
+     # Print the tree
+    def PrintTree(self):
+        if self.left:
+            self.left.PrintTree()
+        print( self.data),
+        if self.right:
+            self.right.PrintTree()
+
+root = Node(12)
+root.insert(6)
+root.insert(14)
+root.insert(3)
+root.PrintTree()
